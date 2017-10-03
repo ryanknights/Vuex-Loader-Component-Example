@@ -3,7 +3,8 @@
     <h1>Vuex Loader</h1>
     <button @click="setLoading(true)">Enable Loading</button>
     <button @click="setLoading(false)">Disable Loading</button>
-    <button @click="loadingExample">2 Second Loading</button>
+    <button @click="timeoutExample">2 Second Loading</button>
+    <button @click="promiseExample">Promise Loading</button>
     <loader />
   </div>
 </template>
@@ -23,9 +24,20 @@ export default {
     ...mapActions({
       setLoading: 'loader/setLoading'
     }),
-    loadingExample () {
+    timeoutExample () {
       this.setLoading(true);
       setTimeout(() => this.setLoading(false), 2000);
+    },
+    promiseExample () {
+      this.setLoading(true);
+      this.returnPromise()
+        .then((data) => this.setLoading(false))
+        .catch((error) => this.setLoading(false));
+    },
+    returnPromise () {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => resolve({some: 'data'}), 2000);
+      });
     }
   }
 }
