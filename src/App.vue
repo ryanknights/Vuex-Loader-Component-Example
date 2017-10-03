@@ -5,6 +5,7 @@
     <button @click="setLoading(false)">Disable Loading</button>
     <button @click="timeoutExample">2 Second Loading</button>
     <button @click="promiseExample">Promise Loading</button>
+    <axios-requests />
     <loader />
   </div>
 </template>
@@ -12,13 +13,15 @@
 <script>
 
 import Loader from './components/Loader';
+import AxiosRequests from './components/AxiosRequests';
 
 import { mapActions } from 'vuex';
 
 export default {
   name: 'app',
   components: {
-    Loader
+    Loader,
+    AxiosRequests
   },
   methods: {
     ...mapActions({

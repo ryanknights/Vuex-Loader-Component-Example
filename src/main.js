@@ -5,6 +5,12 @@ import App from './App';
 
 import store from './store/store';
 
+import axios from 'axios';
+import { onSuccess, onError, beforeRequestSuccess, beforeRequestError } from './interceptors/loader';
+
+axios.interceptors.request.use(beforeRequestSuccess, beforeRequestError);
+axios.interceptors.response.use(onSuccess, onError);
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
