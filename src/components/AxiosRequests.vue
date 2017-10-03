@@ -5,7 +5,7 @@
     <button @click="postRequest">POST Request</button>
     <button @click="errorRequest">Errored Request</button>
     <br /><br />
-    <span v-if="isLoading">HTTP request is loading...</span>
+    <span v-if="isLoading">Loading...</span>
   </div>
 </template>
 
