@@ -1,6 +1,6 @@
-# vuex-loader
+# Vuex Loader Component Example
 
-> Vuex Loader
+> An example of creating a loader component that uses Vuex to store/update state, you can view the blog post/tutorial to go along with these files [here](http://ryanknights.co.uk/get-started-with-vue-2-vuex-by-building-a-loader-component/).
 
 ## Build Setup
 
